@@ -18,3 +18,7 @@
 ## 0.0.5
 
 ## included barcode_scanner_library module into plugin
+
+## 0.0.6
+
+## created settings.graddle at root directory
