@@ -14,3 +14,7 @@
 ## 0.0.4
 
 ## Resolved issue unable to find barcode scanner library
+
+## 0.0.5
+
+## included barcode_scanner_library module into plugin
