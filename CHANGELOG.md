@@ -9,3 +9,8 @@
 ## 0.0.3
 
 ## Integrated zebra sdk for android and added barcode stream
+
+
+## 0.0.4
+
+## Resolved issue unable to find barcode scanner library
