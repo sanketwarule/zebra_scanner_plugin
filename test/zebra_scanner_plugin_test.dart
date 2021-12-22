@@ -1,6 +1,6 @@
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:zebra_scanner_plugin/zebra_scanner_plugin.dart';
+import 'package:zebra_scanner_plugin/src/zebra_scanner_plugin.dart';
 
 void main() {
   const MethodChannel channel = MethodChannel('zebra_scanner_plugin');
