@@ -55,5 +55,7 @@ flutter {
 }
 
 dependencies {
-    implementation project(path: ':barcode_scanner_library')
+//    implementation project(path: ':barcode_scanner_library')
+    compileOnly rootProject.findProject(":barcode_scanner_library")
+
 }
