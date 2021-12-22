@@ -1,6 +1,6 @@
 name: zebra_scanner_plugin
 description: A new flutter plugin for scanning a barcode through zebra scanner device.
-version: 0.0.1
+version: 0.0.2
 homepage: https://github.com/sanketwarule/zebra_scanner_plugin.git
 
 environment:
