@@ -1,3 +1,4 @@
+include ':barcode_scanner_library'
 include ':app'
 
 def localPropertiesFile = new File(rootProject.projectDir, "local.properties")

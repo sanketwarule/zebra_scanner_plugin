@@ -1,3 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
   package="com.androsys.zebra_scanner_plugin">
+    <application>
+        <activity android:name=".ConnectionActivity"
+            android:exported="true"/>
+    </application>
 </manifest>
