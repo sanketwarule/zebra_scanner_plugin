@@ -3,8 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/zebra_scanner_plugin.iml" filepath="$PROJECT_DIR$/zebra_scanner_plugin.iml" />
-      <module fileurl="file://$PROJECT_DIR$/android/zebra_scanner_plugin_android.iml" filepath="$PROJECT_DIR$/android/zebra_scanner_plugin_android.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/android/zebra_scanner_plugin_example_android.iml" filepath="$PROJECT_DIR$/example/android/zebra_scanner_plugin_example_android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/BarcodeScannerLibrary/zebra_scanner_plugin.BarcodeScannerLibrary.iml" filepath="$PROJECT_DIR$/.idea/modules/BarcodeScannerLibrary/zebra_scanner_plugin.BarcodeScannerLibrary.iml" />
     </modules>
   </component>
 </project>

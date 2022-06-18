@@ -13,7 +13,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  List<String> scannedCodes = [];
+  List<Barcode> scannedCodes = [];
 
   ScrollController listScrollController = ScrollController();
 
@@ -28,17 +28,20 @@ class _MyAppState extends State<MyApp> {
               PopupMenuItem(
                 child: const Text("Scan and connect"),
                 onTap: () async{
-                  await ZebraScannerPlugin.connect;
+                  await ZebraScannerPlugin.initScanner;
+                  // await ZebraScannerPlugin.connectToScanner("48:01:c5:9e:e7:8c");
+                  await ZebraScannerPlugin.connect();
+
                 },
                 value: 1,
               ),
             ])
           ],
         ),
-        body: StreamBuilder<String>(
+        body: StreamBuilder<Barcode>(
             stream: ZebraScannerPlugin.barcodeStream,
             builder: (context, snapshot) {
-              String? data;
+              Barcode? data;
               if (snapshot.hasData) {
                 data = snapshot.data;
                 scannedCodes.add(data!);
@@ -52,8 +55,10 @@ class _MyAppState extends State<MyApp> {
               return Padding(
                 padding: const EdgeInsets.all(10.0),
                 child: ListView.builder(itemBuilder: (context, index) {
-                  return ListTile(title: Text(scannedCodes[index]),
-                      leading: const Icon(Icons.qr_code,));
+                  return ListTile(title: Text(scannedCodes[index].data),
+                      leading: const Icon(Icons.qr_code,),
+                  trailing: Text(scannedCodes[index].type),
+                  );
                 },
                   controller: listScrollController,
                   itemCount: scannedCodes.length,

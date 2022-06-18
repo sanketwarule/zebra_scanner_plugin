@@ -1,5 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="get_bt_address_instruction1">Enter bluetooth address to connect with scanner</string>
+
     <string name="OK">OK</string>
+    <string name="instruction">Scan the barcode to connect with device</string>
+    <string name="scanner_connect_steps">\n1. Scan the barcode \n2. Notification will appear on the screen, just click on Pair \u0026 Connect \n4. After connecting, a scanner will give a beep sound, and success message will be shown.</string>
+    <string name="get_bt_address_instruction1">Please Enter Your Bluetooth Address.</string>
+    <string name="get_bt_address_instruction_item_1"> Navigate to \"Settings > About Phone > Status > Bluetooth Address\" or </string>
+    <string name="get_bt_address_instruction_item_2">Then write down the Bluetooth address.</string>
+    <string name="get_bt_address_instruction_item_3">Hit back button until return to this screen.</string>
+    <string name="get_bt_address_instruction_item_4">Then type address below.</string>
+    <string name="about_phone">GO TO ABOUT PHONE</string>
+    <string name="cancel2">Cancel</string>
+    <string name="bluetooth_address">Bluetooth Address</string>
+    <string name="clear">Clear</string>
+    <string name="cancel">Cancel</string>
+    <string name="skip">Skip\n(If USB Corded)</string>
+    <string name="continue_txt">Continue</string>
+
 </resources>

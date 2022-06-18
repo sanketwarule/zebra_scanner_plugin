@@ -55,9 +55,4 @@ flutter {
 }
 
 dependencies {
-    implementation project(path: ':barcode_scanner_library')
-    implementation files('barcode_scanner_library/barcode_scanner_library_v2.6.2.0-release.aar')
-
-//    compileOnly rootProject.findProject(":barcode_scanner_library")
-
 }

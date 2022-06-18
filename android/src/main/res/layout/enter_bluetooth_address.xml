@@ -17,15 +17,50 @@
             android:orientation="vertical">
 
             <TextView
+                style="@style/roboto_regular_bold_20dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
-                android:textSize="20dp"
                 android:text="@string/get_bt_address_instruction1"
                 android:paddingBottom="0dp"/>
 
+            <TextView
+                android:id="@+id/txt_navigate_bt_address"
+                style="@style/roboto_medium_16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/get_bt_address_instruction_item_1" />
+            <TextView
+                android:id="@+id/abt_phone"
+                style="@style/roboto_regular_15dp_blue"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:clickable="true"
+                android:text="click here."
+                android:layout_marginBottom="10dp" />
+
+            <TextView
+                style="@style/roboto_regular_15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:text="@string/get_bt_address_instruction_item_2" />
+            <TextView
+                style="@style/roboto_regular_15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:text="@string/get_bt_address_instruction_item_3" />
+            <TextView
+                style="@style/roboto_regular_15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:text="@string/get_bt_address_instruction_item_4" />
+
             <EditText
-                android:id="@+id/device_bluetooth_address"
+                android:id="@+id/text_bt_address"
+                style="@style/roboto_regular_15dp"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginBottom="30dp"
@@ -33,24 +68,30 @@
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp"
                 android:visibility="visible"
-                android:hint="Enter Bluetooth Address"/>
+                android:background="@drawable/border"
+                android:hint="Bluetooth Address"/>
 
+            <include layout="@layout/full_divider" />
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <Button
-                    android:id="@+id/ok"
+                <TextView
+                    android:id="@+id/cancel_continue"
+                    style="@style/roboto_medium_16dp_blue"
                     android:layout_width="0dp"
-                    android:layout_weight="50"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="right"
+                    android:layout_gravity="center"
+                    android:layout_weight="50"
                     android:clickable="true"
                     android:gravity="center"
-                    android:text="@string/OK"
-                    android:lines="2"
-                    />
+                    android:paddingBottom="@dimen/app_padding_bottom"
+                    android:paddingLeft="@dimen/app_margin_right"
+                    android:paddingRight="@dimen/app_margin_right"
+                    android:paddingTop="@dimen/app_padding_top"
+                    android:text="@string/cancel" />
+
             </TableRow>
         </LinearLayout>
 
