@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id=":BarcodeScannerLibrary" external.linked.project.path="$MODULE_DIR$/../../../BarcodeScannerLibrary" external.root.project.path="$MODULE_DIR$/../../.." external.system.id="GRADLE" external.system.module.group="zebra_scanner_plugin" external.system.module.version="unspecified" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../../BarcodeScannerLibrary">
+      <excludeFolder url="file://$MODULE_DIR$/../../../BarcodeScannerLibrary/.gradle" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../BarcodeScannerLibrary/build" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
