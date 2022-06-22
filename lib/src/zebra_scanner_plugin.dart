@@ -38,7 +38,7 @@ class ZebraScannerPlugin {
     return _eventChannel.receiveBroadcastStream().map((event) {
       Map map = json.decode(event);
       // print("barcodeStream :: data : ${map["data"]} and type : ${map["type"].toString()}");
-      Barcode barcode = Barcode(data: map["data"],type: map["type"]);
+      Barcode barcode = Barcode(data: map["data"], type: map["type"]);
       return barcode;
     });
   }

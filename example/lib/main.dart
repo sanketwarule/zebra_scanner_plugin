@@ -25,17 +25,16 @@ class _MyAppState extends State<MyApp> {
           title: const Text('Zebra Scanner Plugin example app'),
           actions: [
             PopupMenuButton(
-                itemBuilder: (context) =>
-                [
-                  PopupMenuItem(
-                    child: const Text("Scan and connect"),
-                    onTap: () async {
-                      await ZebraScannerPlugin.initScanner;
-                      await ZebraScannerPlugin.connect();
-                    },
-                    value: 1,
-                  ),
-                ])
+                itemBuilder: (context) => [
+                      PopupMenuItem(
+                        child: const Text("Scan and connect"),
+                        onTap: () async {
+                          await ZebraScannerPlugin.initScanner;
+                          await ZebraScannerPlugin.connect();
+                        },
+                        value: 1,
+                      ),
+                    ])
           ],
         ),
         body: StreamBuilder<Barcode>(
