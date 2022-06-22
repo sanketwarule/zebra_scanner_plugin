@@ -35,3 +35,7 @@
 ## Upgrade gradle version
 
 ## Added gif output of example app
+
+## 1.1.1
+
+## Added output gif in pub dev
