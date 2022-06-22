@@ -103,195 +103,195 @@ public class BarcodeTypes {
     public static String getBarcodeTypeName(int barcodeType) {
         switch (barcodeType) {
             case ST_NOT_APP:
-                return "Unknown,";
+                return "Unknown";
             case ST_CODE_39:
-                return "Code 39,";
+                return "Code 39";
             case ST_CODABAR:
-                return "Codabar,";
+                return "Codabar";
             case ST_CODE_128:
-                return "Code 128,";
+                return "Code 128";
             case ST_D2OF5:
-                return "Discrete 2 of 5,";
+                return "Discrete 2 of 5";
             case ST_IATA:
-                return "IATA,";
+                return "IATA";
             case ST_I2OF5:
-                return "Interleaved 2 of 5,";
+                return "Interleaved 2 of 5";
             case ST_CODE93:
-                return "Code 93,,";
+                return "Code 93";
             case ST_UPCA:
-                return "UPCA,";
+                return "UPCA";
             case ST_UPCE0:
-                return "UPCE 0,";
+                return "UPCE 0";
             case ST_EAN8:
-                return "EAN 8,";
+                return "EAN 8";
             case ST_EAN13:
-                return "EAN 13,";
+                return "EAN 13";
             case ST_CODE11:
-                return "Code 11,";
+                return "Code 11";
             case ST_CODE49:
-                return "Code 49,";
+                return "Code 49";
             case ST_MSI:
-                return "MSI,";
+                return "MSI";
             case ST_EAN128:
-                return "EAN 128,";
+                return "EAN 128";
             case ST_UPCE1:
-                return "UPCE 1,";
+                return "UPCE 1";
             case ST_PDF417:
-                return "PDF 417,";
+                return "PDF 417";
             case ST_CODE16K:
-                return "Code 16K,";
+                return "Code 16K";
             case ST_C39FULL:
-                return "Code 39 Full ASCII,";
+                return "Code 39 Full ASCII";
             case ST_UPCD:
-                return "UPCD,";
+                return "UPCD";
             case ST_TRIOPTIC:
-                return "Trioptic,";
+                return "Trioptic";
             case ST_BOOKLAND:
-                return "Bookland,";
+                return "Bookland";
             case ST_COUPON:
-                return "Coupon Code,";
+                return "Coupon Code";
             case ST_NW7:
-                return "NW7,";
+                return "NW7";
             case ST_ISBT128:
-                return "ISBT-128,";
+                return "ISBT-128";
             case ST_MICRO_PDF:
-                return "Micro PDF,";
+                return "Micro PDF";
             case ST_DATAMATRIX:
-                return "Data Matrix,";
+                return "Data Matrix";
             case ST_QR_CODE:
-                return "QR Code,";
+                return "QR Code";
             case ST_MICRO_PDF_CCA:
-                return "Micro PDF CCA,";
+                return "Micro PDF CCA";
             case ST_POSTNET_US:
-                return "Postnet US,";
+                return "Postnet US";
             case ST_PLANET_CODE:
-                return "Planet Code,";
+                return "Planet Code";
             case ST_CODE_32:
-                return "Code 32,";
+                return "Code 32";
             case ST_ISBT128_CON:
-                return "ISBT-128 Concat,";
+                return "ISBT-128 Concat";
             case ST_JAPAN_POSTAL:
-                return "Japan Postal,";
+                return "Japan Postal";
             case ST_AUS_POSTAL:
-                return "Aus Postal,";
+                return "Aus Postal";
             case ST_DUTCH_POSTAL:
-                return "Dutch Postal,";
+                return "Dutch Postal";
             case ST_MAXICODE:
-                return "Maxicode,";
+                return "Maxicode";
             case ST_CANADIN_POSTAL:
-                return "Canada Postal,";
+                return "Canada Postal";
             case ST_UK_POSTAL:
-                return "UK Postal,";
+                return "UK Postal";
             case ST_MACRO_PDF:
-                return "Macro PDF-417,";
+                return "Macro PDF-417";
             case ST_MACRO_QR_CODE:
-                return "Macro QR Code,";
+                return "Macro QR Code";
             case ST_RSS14:
-                return "GS1 Databar,";
+                return "GS1 Databar";
             case ST_RSS_LIMITET:
-                return "GS1 Databar Limited,";
+                return "GS1 Databar Limited";
             case ST_RSS_EXPANDED:
-                return "GS1 Databar Expanded,";
+                return "GS1 Databar Expanded";
             case ST_SCANLET:
-                return "Scanlet Webcode,";
+                return "Scanlet Webcode";
             case ST_UPCA_2:
-                return "UPCA + 2,";
+                return "UPCA + 2";
             case ST_UPCE0_2:
-                return "UPCE0 + 2,";
+                return "UPCE0 + 2";
             case ST_EAN8_2:
-                return "EAN8 + 2,";
+                return "EAN8 + 2";
             case ST_EAN13_2:
-                return "EAN13 + 2,";
+                return "EAN13 + 2";
             case ST_UPCE1_2:
-                return "UPCE1 + 2,";
+                return "UPCE1 + 2";
             case ST_CCA_EAN128:
-                return "CC-A + EAN-128,";
+                return "CC-A + EAN-128";
             case ST_CCA_EAN13:
-                return "CC-A + EAN-13,";
+                return "CC-A + EAN-13";
             case ST_CCA_EAN8:
-                return "CC-A + EAN-8,";
+                return "CC-A + EAN-8";
             case ST_CCA_RSS_EXPANDED:
-                return "CC-A + GS1 Databar Expanded,";
+                return "CC-A + GS1 Databar Expanded";
             case ST_CCA_RSS_LIMITED:
-                return "CC-A + GS1 Databar Limited,";
+                return "CC-A + GS1 Databar Limited";
             case ST_CCA_RSS14:
-                return "CC-A + GS1 Databar,";
+                return "CC-A + GS1 Databar";
             case ST_CCA_UPCA:
-                return "CC-A + UPCA,";
+                return "CC-A + UPCA";
             case ST_CCA_UPCE:
-                return "CC-A + UPC-E,";
+                return "CC-A + UPC-E";
             case ST_CCC_EAN128:
-                return "CC-C + EAN-128,";
+                return "CC-C + EAN-128";
             case ST_TLC39:
-                return "TLC-39,";
+                return "TLC-39";
             case ST_CCB_EAN128:
-                return "CC-B + EAN-128,";
+                return "CC-B + EAN-128";
             case ST_CCB_EAN13:
-                return "CC-B + EAN-13,";
+                return "CC-B + EAN-13";
             case ST_CCB_EAN8:
-                return "CC-B + EAN-8,";
+                return "CC-B + EAN-8";
             case ST_CCB_RSS_EXPANDED:
-                return "CC-B + GS1 Databar Expanded,";
+                return "CC-B + GS1 Databar Expanded";
             case ST_CCB_RSS_LIMITED:
-                return "CC-B + GS1 Databar Limited,";
+                return "CC-B + GS1 Databar Limited";
             case ST_CCB_RSS14:
-                return "CC-B + GS1 Databar,";
+                return "CC-B + GS1 Databar";
             case ST_CCB_UPCA:
-                return "CC-B + UPC-A,";
+                return "CC-B + UPC-A";
             case ST_CCB_UPCE:
-                return "CC-B + UPC-E,";
+                return "CC-B + UPC-E";
             case ST_SIGNATURE_CAPTURE:
-                return "Signature,";
+                return "Signature";
             case ST_MATRIX2OF5_OLD:
-                return "Matrix 2 Of 5,";
+                return "Matrix 2 Of 5";
             case ST_MATRIX_2_OF_5:
-                return "Matrix 2 Of 5,";
+                return "Matrix 2 Of 5";
             case ST_CHINESE2OF5:
-                return "Chinese 2 Of 5,";
+                return "Chinese 2 Of 5";
             case ST_UPCA_5:
-                return "UPCA 5,";
+                return "UPCA 5";
             case ST_UPCE0_5:
-                return "UPCE0 5,";
+                return "UPCE0 5";
             case ST_EAN8_5:
-                return "EAN8 5,";
+                return "EAN8 5";
             case ST_EAN13_5:
-                return "EAN13 5,";
+                return "EAN13 5";
             case ST_UPCE1_5:
-                return "UPCE1 5,";
+                return "UPCE1 5";
             case ST_MACRO_MICRO_PDF:
-                return "Macro Micro PDF,";
+                return "Macro Micro PDF";
             case ST_MICRO_QR_CODE:
-                return "Micro QR Code,";
+                return "Micro QR Code";
             case ST_AZTEC:
-                return "Aztec Code,";
+                return "Aztec Code";
             case ST_AZTEC_RUNE_CODE:
-                return "Aztec Rune Code,";
+                return "Aztec Rune Code";
             case ST_FRENCH_LOTTERY:
-                return "French Lottery,";
+                return "French Lottery";
             case ST_PARAMETER_FNC3:
-                return "Parameter (FNC3),";
+                return "Parameter (FNC3)";
             case ST_4STATE_US:
-                return "4 State US,";
+                return "4 State US";
             case ST_4STATE_US4:
-                return "4 State US4,";
+                return "4 State US4";
             case ST_CUE_CAT_CODE:
-                return "Cue CAT Code,";
+                return "Cue CAT Code";
             case ST_KOREAN2OF5:
-                return "Korean 3 Of 5,";
+                return "Korean 3 Of 5";
             case ST_OCRB:
-                return "OCRB,";
+                return "OCRB";
             case ST_RFID_RAW:
-                return "RFID Raw,";
+                return "RFID Raw";
             case ST_RFID_URI:
-                return "RFID URI,";
+                return "RFID URI";
             case ST_ISSN:
-                return "ISSN,";
+                return "ISSN";
             case ST_HAN_XIN:
-                return "Han Xin,";
+                return "Han Xin";
             case ST_NEW_COUPON:
-                return "GS1 Databar Expanded Coupon,";
+                return "GS1 Databar Expanded Coupon";
             case ST_GS1_DATAMATRIX:
-                return "GS1 Datamatrix,";
+                return "GS1 Datamatrix";
             default:
                 return "";
         }

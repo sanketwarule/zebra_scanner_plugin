@@ -65,8 +65,6 @@ public class ZebraScannerPlugin implements FlutterPlugin,
 //                break;
             case "connect":
                 launchBarcodeScanActivity();
-                final Map<String, Object> arguments = call.arguments();
-
                 result.success("connectToScanner() method invoked");
                 break;
             case "initScanner":

@@ -31,7 +31,6 @@ class _MyAppState extends State<MyApp> {
                     child: const Text("Scan and connect"),
                     onTap: () async {
                       await ZebraScannerPlugin.initScanner;
-                      // await ZebraScannerPlugin.connectToScanner("48:01:c5:9e:e7:8c");
                       await ZebraScannerPlugin.connect();
                     },
                     value: 1,

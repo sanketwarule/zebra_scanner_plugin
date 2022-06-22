@@ -39,3 +39,7 @@
 ## 1.1.1
 
 ## Added output gif in pub dev
+
+## 1.1.2
+
+## Removed "," from the scanned barcode type
