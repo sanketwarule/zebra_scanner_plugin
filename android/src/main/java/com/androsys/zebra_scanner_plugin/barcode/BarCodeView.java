@@ -57,25 +57,25 @@ public class BarCodeView extends View {
 
     }
 
-    public int getXSize () {
+    public int getXSize() {
         return currentXSize;
     }
 
-    public int getYSize () {
+    public int getYSize() {
         return currentYSize;
     }
 
-    public void setSize (int x, int y) {
+    public void setSize(int x, int y) {
         previousXSize = currentXSize = x;
         previousYSize = currentYSize = y;
         isScaled = true;
     }
 
     @Override
-    protected void onDraw (Canvas canvas) {
+    protected void onDraw(Canvas canvas) {
         canvas.drawColor(Color.WHITE);
         int width = barcode.getWidth();
-        int [] zebra = barcode.getArray();
+        int[] zebra = barcode.getArray();
 
         int leftBorder = canvas.getWidth() * LEFT_BORDER / 100;
         int rightBorder = canvas.getWidth() * RIGHT_BORDER / 100;
@@ -88,8 +88,7 @@ public class BarCodeView extends View {
         if (isScaled) {
             if (currentXSize < barcodeWidth) {
                 barcodeWidth = currentXSize;
-            }
-            else {
+            } else {
                 skipResizing = true;
             }
         }
@@ -98,12 +97,11 @@ public class BarCodeView extends View {
             barcodeWidth = maxXSize;
         }
 
-        float minStripWidth = ((float)barcodeWidth) / width;
+        float minStripWidth = ((float) barcodeWidth) / width;
         if (minStripWidth < MIN_STRIP_WIDTH) {
             if (!isScaled) {
                 barcodeWidth = Math.round(MIN_STRIP_WIDTH * width);
-            }
-            else if (previousXSize > currentXSize) {
+            } else if (previousXSize > currentXSize) {
                 skipResizing = true;
             }
         }
@@ -117,8 +115,7 @@ public class BarCodeView extends View {
         if (isScaled) {
             if (currentYSize < barcodeHeight) {
                 barcodeHeight = currentYSize;
-            }
-            else {
+            } else {
                 skipResizing = true;
             }
         }
@@ -130,9 +127,8 @@ public class BarCodeView extends View {
         if (skipResizing) {
             barcodeWidth = currentXSize = previousXSize;
             barcodeHeight = currentYSize = previousYSize;
-            minStripWidth = ((float)barcodeWidth) / width;
-        }
-        else {
+            minStripWidth = ((float) barcodeWidth) / width;
+        } else {
             // remember actual size
             previousXSize = currentXSize = barcodeWidth;
             previousYSize = currentYSize = barcodeHeight;
@@ -141,14 +137,13 @@ public class BarCodeView extends View {
         float posX = (canvas.getWidth() - barcodeWidth - leftBorder - rightBorder) / 2 + leftBorder;
         float posY = (canvas.getHeight() - barcodeHeight - topBorder - bottomBorder) / 2 + topBorder;
 
-        for (int symbol: zebra) {
-            for (int i=0; i<6; i++, symbol>>=2) {
-                float stripWidth = ((symbol&0x3)+1)*minStripWidth;
-                rc.set(posX, posY, posX+stripWidth, posY+barcodeHeight);
-                if (i%2 == 0) {
+        for (int symbol : zebra) {
+            for (int i = 0; i < 6; i++, symbol >>= 2) {
+                float stripWidth = ((symbol & 0x3) + 1) * minStripWidth;
+                rc.set(posX, posY, posX + stripWidth, posY + barcodeHeight);
+                if (i % 2 == 0) {
                     paint.setColor(Color.BLACK);
-                }
-                else {
+                } else {
                     paint.setColor(Color.WHITE);
                 }
                 canvas.drawRect(rc, paint);
@@ -156,9 +151,9 @@ public class BarCodeView extends View {
             }
         }
         // The last strip
-        int symbol = zebra[zebra.length-1] >> 12;
-        float stripWidth = ((symbol&0x3)+1)*minStripWidth;
-        rc.set(posX, posY, posX+stripWidth, posY+barcodeHeight);
+        int symbol = zebra[zebra.length - 1] >> 12;
+        float stripWidth = ((symbol & 0x3) + 1) * minStripWidth;
+        rc.set(posX, posY, posX + stripWidth, posY + barcodeHeight);
         paint.setColor(Color.BLACK);
         canvas.drawRect(rc, paint);
 
@@ -188,13 +183,12 @@ public class BarCodeView extends View {
             float prevSpan = detector.getPreviousSpan();
             float currSpan = detector.getCurrentSpan();
 
-            if ((prevSpan-currSpan) > 0) {
+            if ((prevSpan - currSpan) > 0) {
                 // Decreasing size
                 currentXSize -= Math.round(((float) currentXSize) * (prevSpan - currSpan) * 2 / getWidth());
                 currentYSize -= Math.round(((float) currentYSize) * (prevSpan - currSpan) * 2 / getWidth());
                 isScaled = true;
-            }
-            else if ((prevSpan-currSpan) < 0) {
+            } else if ((prevSpan - currSpan) < 0) {
                 // Increasing size
                 currentXSize += Math.round(((float) currentXSize) * (currSpan - prevSpan) * 2 / getWidth());
                 currentYSize += Math.round(((float) currentYSize) * (currSpan - prevSpan) * 2 / getWidth());

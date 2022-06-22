@@ -7,7 +7,7 @@ public class ScannerConfiguration {
     private String configurationName;
     private String configurationCode;
 
-    public ScannerConfiguration(String configurationName, String configurationCode){
+    public ScannerConfiguration(String configurationName, String configurationCode) {
         this.configurationName = configurationName;
         this.configurationCode = configurationCode;
     }

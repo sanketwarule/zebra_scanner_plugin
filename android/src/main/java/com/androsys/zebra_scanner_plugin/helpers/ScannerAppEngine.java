@@ -28,6 +28,7 @@ public interface ScannerAppEngine {
     interface IScannerAppEngineDevConnectionsDelegate {
         /**
          * Method to notify about that connection has been established with a scanner
+         *
          * @param scannerID ID of the scanner with which a connection was established
          * @return -
          */
@@ -35,6 +36,7 @@ public interface ScannerAppEngine {
 
         /**
          * Method to notify about that connection has been terminated with a scanner
+         *
          * @param scannerID ID of the connected scanner which was disconnected
          * @return -
          */
@@ -42,6 +44,7 @@ public interface ScannerAppEngine {
 
         /**
          * Method to notify about the scanned data with a scanner
+         *
          * @param scanData is the actual string obtained from performing a scan with scanner
          * @return -
          */
@@ -53,8 +56,11 @@ public interface ScannerAppEngine {
      */
     public interface IScannerAppEngineDevEventsDelegate {
         void scannerBarcodeEvent(byte[] barcodeData, int barcodeType, int scannerID);
+
         void scannerFirmwareUpdateEvent(FirmwareUpdateEvent firmwareUpdateEvent);
+
         void scannerImageEvent(byte[] imageData);
+
         void scannerVideoEvent(byte[] videoData);
     }
 
@@ -66,56 +72,66 @@ public interface ScannerAppEngine {
 
     /**
      * Utility function to know if an app is in background or not
+     *
      * @return -
      */
     boolean isInBackgroundMode(final Context context);
 
 
     /* API calls for UI View Controllers */
+
     /**
      * Method to remove a {@link IScannerAppEngineDevListDelegate} from the list of delegates
+     *
      * @param delegate Delegate to be added
      */
     void addDevListDelegate(IScannerAppEngineDevListDelegate delegate);
 
     /**
      * Method to add a {@link IScannerAppEngineDevListDelegate} from the list of delegates
+     *
      * @param delegate Delegate to be added
      */
     void addDevConnectionsDelegate(IScannerAppEngineDevConnectionsDelegate delegate);
 
     /**
      * Method to add a {@link IScannerAppEngineDevListDelegate} from the list of delegates
+     *
      * @param delegate Delegate to be added
      */
     void addDevEventsDelegate(IScannerAppEngineDevEventsDelegate delegate);
 
     /**
      * Method to remove a {@link IScannerAppEngineDevListDelegate} from the list of delegates
+     *
      * @param delegate Delegate to be removed
      */
     void removeDevListDelegate(IScannerAppEngineDevListDelegate delegate);
 
     /**
      * Method to remove a {@link IScannerAppEngineDevListDelegate} from the list of delegates
+     *
      * @param delegate Delegate to be removed
      */
     void removeDevConnectiosDelegate(IScannerAppEngineDevConnectionsDelegate delegate);
 
     /**
      * Method to remove a {@link IScannerAppEngineDevListDelegate} from the list of delegates
+     *
      * @param delegate Delegate to be removed
      */
     void removeDevEventsDelegate(IScannerAppEngineDevEventsDelegate delegate);
 
     /**
      * Method to fetch the list of available scanners
+     *
      * @return List of scanners
      */
     List<DCSScannerInfo> getActualScannersList();
 
     /**
      * Method to fetch the info about a scanner
+     *
      * @param dev_index Index of the scanner in question
      * @return Scanner Info
      */
@@ -123,6 +139,7 @@ public interface ScannerAppEngine {
 
     /**
      * Method to fetch the info about a scanner by it's ID
+     *
      * @param scannerId ID of the scanner of interest
      * @return Scanner Info
      */
@@ -152,19 +169,22 @@ public interface ScannerAppEngine {
 
     /**
      * Method to set the reconnection option for a scanner
+     *
      * @param scannerId ID of the scanner of interest
-     * @param enable Enable/Disable auto reconnection
+     * @param enable    Enable/Disable auto reconnection
      */
     DCSSDKDefs.DCSSDK_RESULT setAutoReconnectOption(int scannerId, boolean enable);
 
     /**
      * Method to enable/disable discovery of scanners
+     *
      * @param enable enable/disable the discovery
      */
     void enableScannersDetection(boolean enable);
 
     /**
      * Method to enable/disable discovery of Bluetooth scanners
+     *
      * @param enable enable/disable the Bluetooth scanner discovery
      */
     void enableBluetoothScannerDiscovery(boolean enable);
@@ -204,20 +224,23 @@ public interface ScannerAppEngine {
      * @param mode Mode to be used
      */
 //    void configureOperationalMode(DCSSDKDefs.DCSSDK_MODE mode);
+
     /**
      * Method to execute command for scanner
-     * @param opCode operantional code to be used
-     * @param inXML input xml to scanner
-     * @param outXML output xml from scanner
+     *
+     * @param opCode    operantional code to be used
+     * @param inXML     input xml to scanner
+     * @param outXML    output xml from scanner
      * @param scannerID id of scanner
      */
     boolean executeCommand(DCSSDKDefs.DCSSDK_COMMAND_OPCODE opCode, String inXML, StringBuilder outXML, int scannerID);
 
     /**
      * Method to execute command for scanner
-     * @param opCode operantional code to be used
-     * @param inXML input xml to scanner
-     * @param outXML output xml from scanner
+     *
+     * @param opCode    operantional code to be used
+     * @param inXML     input xml to scanner
+     * @param outXML    output xml from scanner
      * @param scannerID id of scanner
      */
     boolean executeSSICommand(DCSSDKDefs.DCSSDK_COMMAND_OPCODE opCode, String inXML, StringBuilder outXML, int scannerID);

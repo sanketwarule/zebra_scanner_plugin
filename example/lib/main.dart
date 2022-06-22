@@ -24,18 +24,18 @@ class _MyAppState extends State<MyApp> {
         appBar: AppBar(
           title: const Text('Zebra Scanner Plugin example app'),
           actions: [
-            PopupMenuButton(itemBuilder: (context) => [
-              PopupMenuItem(
-                child: const Text("Scan and connect"),
-                onTap: () async{
-                  await ZebraScannerPlugin.initScanner;
-                  // await ZebraScannerPlugin.connectToScanner("48:01:c5:9e:e7:8c");
-                  await ZebraScannerPlugin.connect();
-
-                },
-                value: 1,
-              ),
-            ])
+            PopupMenuButton(
+                itemBuilder: (context) => [
+                      PopupMenuItem(
+                        child: const Text("Scan and connect"),
+                        onTap: () async {
+                          await ZebraScannerPlugin.initScanner;
+                          // await ZebraScannerPlugin.connectToScanner("48:01:c5:9e:e7:8c");
+                          await ZebraScannerPlugin.connect();
+                        },
+                        value: 1,
+                      ),
+                    ])
           ],
         ),
         body: StreamBuilder<Barcode>(
@@ -46,26 +46,30 @@ class _MyAppState extends State<MyApp> {
                 data = snapshot.data;
                 scannedCodes.add(data!);
                 if (listScrollController.hasClients) {
-                  final position = listScrollController.position.maxScrollExtent;
+                  final position =
+                      listScrollController.position.maxScrollExtent;
                   listScrollController.jumpTo(position);
                 }
-              } else if (snapshot.hasError){
+              } else if (snapshot.hasError) {
                 print(snapshot.error);
               }
               return Padding(
                 padding: const EdgeInsets.all(10.0),
-                child: ListView.builder(itemBuilder: (context, index) {
-                  return ListTile(title: Text(scannedCodes[index].data),
-                      leading: const Icon(Icons.qr_code,),
-                  trailing: Text(scannedCodes[index].type),
-                  );
-                },
+                child: ListView.builder(
+                  itemBuilder: (context, index) {
+                    return ListTile(
+                      title: Text(scannedCodes[index].data),
+                      leading: const Icon(
+                        Icons.qr_code,
+                      ),
+                      trailing: Text(scannedCodes[index].type),
+                    );
+                  },
                   controller: listScrollController,
                   itemCount: scannedCodes.length,
                 ),
               );
-            }
-        ),
+            }),
       ),
     );
   }

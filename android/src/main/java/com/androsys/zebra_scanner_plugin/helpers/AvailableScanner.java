@@ -23,11 +23,12 @@ public class AvailableScanner implements Comparable<AvailableScanner> {
         this.isConnectable = isConnectable;
     }
 
-    private  boolean isConnectable;
+    private boolean isConnectable;
 
     private DCSSDKDefs.DCSSDK_CONN_TYPES connectionType;
+
     public AvailableScanner(DCSScannerInfo activeScanner) {
-        this(activeScanner.getScannerID(),activeScanner.getScannerName(),activeScanner.getScannerHWSerialNumber(),activeScanner.isActive(),activeScanner.isAutoCommunicationSessionReestablishment(),activeScanner.getConnectionType());
+        this(activeScanner.getScannerID(), activeScanner.getScannerName(), activeScanner.getScannerHWSerialNumber(), activeScanner.isActive(), activeScanner.isAutoCommunicationSessionReestablishment(), activeScanner.getConnectionType());
     }
 
     public boolean isAutoReconnection() {
@@ -49,8 +50,8 @@ public class AvailableScanner implements Comparable<AvailableScanner> {
 
     private boolean isAutoReconnection;
 
-    public AvailableScanner(int scannerId, String scannerName, String scannerAddress, boolean isConnected, boolean isAutoReconnection, DCSSDKDefs.DCSSDK_CONN_TYPES connectionType){
-        this.scannerId=scannerId;
+    public AvailableScanner(int scannerId, String scannerName, String scannerAddress, boolean isConnected, boolean isAutoReconnection, DCSSDKDefs.DCSSDK_CONN_TYPES connectionType) {
+        this.scannerId = scannerId;
         this.scannerName = scannerName;
         this.scannerAddress = scannerAddress;
         this.isConnected = isConnected;
@@ -58,6 +59,7 @@ public class AvailableScanner implements Comparable<AvailableScanner> {
         this.connectionType = connectionType;
         this.isConnectable = false;
     }
+
     public int getScannerId() {
         return scannerId;
     }

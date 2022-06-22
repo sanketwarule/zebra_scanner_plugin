@@ -11,25 +11,27 @@ public class Foreground implements Application.ActivityLifecycleCallbacks {
 
     private static Foreground instance;
 
-    public static void init(Application app){
-        if (instance == null){
+    public static void init(Application app) {
+        if (instance == null) {
             instance = new Foreground();
             app.registerActivityLifecycleCallbacks(instance);
         }
     }
 
-    public static Foreground get(){
+    public static Foreground get() {
         return instance;
     }
 
-    private Foreground(){}
+    private Foreground() {
+    }
+
     private boolean foreground;
 
-    public boolean isForeground(){
+    public boolean isForeground() {
         return foreground;
     }
 
-    public boolean isBackground(){
+    public boolean isBackground() {
         return !foreground;
     }
 

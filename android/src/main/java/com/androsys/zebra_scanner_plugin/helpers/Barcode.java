@@ -12,14 +12,15 @@ public class Barcode implements Parcelable {
     int fromScannerID;
 
     public Barcode(byte[] barcodeData, int barcodeType, int fromScannerID) {
-        this.barcodeData=barcodeData;
-        this.barcodeType=barcodeType;
-        this.fromScannerID=fromScannerID;
+        this.barcodeData = barcodeData;
+        this.barcodeType = barcodeType;
+        this.fromScannerID = fromScannerID;
     }
+
     public Barcode(Parcel in) {
-        this.barcodeData=in.readString().getBytes();
-        this.barcodeType=in.readInt();
-        this.fromScannerID=in.readInt();
+        this.barcodeData = in.readString().getBytes();
+        this.barcodeType = in.readInt();
+        this.fromScannerID = in.readInt();
     }
 
     public byte[] getBarcodeData() {
@@ -58,16 +59,17 @@ public class Barcode implements Parcelable {
         parcel.writeInt(barcodeType);
         parcel.writeInt(fromScannerID);
     }
+
     public static final Creator<Barcode> CREATOR = new Creator<Barcode>() {
 
-    @Override
-    public Barcode createFromParcel(Parcel source) {
-        return new Barcode(source);
-    }
+        @Override
+        public Barcode createFromParcel(Parcel source) {
+            return new Barcode(source);
+        }
 
-    @Override
-    public Barcode[] newArray(int size) {
-        return new Barcode[size];
-    }
-};
+        @Override
+        public Barcode[] newArray(int size) {
+            return new Barcode[size];
+        }
+    };
 }

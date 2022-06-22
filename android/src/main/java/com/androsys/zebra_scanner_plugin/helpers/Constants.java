@@ -75,7 +75,7 @@ public class Constants {
     public static final String VIRTUAL_TETHER_EVENT_NOTIFY = "intent_virtual_tether_event_notify";
 
 
-    public static final String PREF_VIRTUAL_TETHER_HOST_BACKGROUND_COLOR  = "backgroundColor";
+    public static final String PREF_VIRTUAL_TETHER_HOST_BACKGROUND_COLOR = "backgroundColor";
     public static final int VIRTUAL_TETHER_HOST_ANIMATION_DURATION = 1000;
 
 

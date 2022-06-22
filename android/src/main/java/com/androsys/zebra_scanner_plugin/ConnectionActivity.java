@@ -209,15 +209,15 @@ public class ConnectionActivity extends AppCompatActivity implements ScannerAppE
         LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(-1, -1);
 
         BarCodeView barCodeView = Application.sdkHandler.dcssdkGetPairingBarcode(selectedProtocol, selectedConfig);
-        if(barCodeView!=null) {
+        if (barCodeView != null) {
             updateBarcodeView(layoutParams, barCodeView);
-        }else{
+        } else {
             // SDK was not able to determine Bluetooth MAC. So call the dcssdkGetPairingBarcode with BT Address.
 
-            btAddress= getDeviceBTAddress(settings);
-            if(btAddress.equals("")){
+            btAddress = getDeviceBTAddress(settings);
+            if (btAddress.equals("")) {
                 llBarcode.removeAllViews();
-            }else {
+            } else {
                 Application.sdkHandler.dcssdkSetBTAddress(btAddress);
                 barCodeView = Application.sdkHandler.dcssdkGetPairingBarcode(selectedProtocol, selectedConfig, btAddress);
                 if (barCodeView != null) {
@@ -267,6 +267,7 @@ public class ConnectionActivity extends AppCompatActivity implements ScannerAppE
                 final EditText editTextBluetoothAddress = (EditText) dialogBTAddress.findViewById(R.id.text_bt_address);
                 editTextBluetoothAddress.addTextChangedListener(new TextWatcher() {
                     String previousMac = null;
+
                     @Override
                     public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
@@ -289,7 +290,7 @@ public class ConnectionActivity extends AppCompatActivity implements ScannerAppE
                     @Override
                     public void afterTextChanged(Editable s) {
                         userEnteredBluetoothAddress = s.toString();
-                        if(userEnteredBluetoothAddress.length() > MAX_BLUETOOTH_ADDRESS_CHARACTERS)
+                        if (userEnteredBluetoothAddress.length() > MAX_BLUETOOTH_ADDRESS_CHARACTERS)
                             return;
 
                         if (isValidBTAddress(userEnteredBluetoothAddress)) {
@@ -361,7 +362,7 @@ public class ConnectionActivity extends AppCompatActivity implements ScannerAppE
                             if (currentColonCount < previousColonCount) {
                                 try {
                                     formattedMacAddress = formattedMacAddress.substring(0, selectionStartPosition - 1) + formattedMacAddress.substring(selectionStartPosition);
-                                }catch (Exception e){
+                                } catch (Exception e) {
                                     e.printStackTrace();
                                 }
                                 String cleanMacAddress = clearNonMacCharacters(formattedMacAddress);
@@ -410,7 +411,8 @@ public class ConnectionActivity extends AppCompatActivity implements ScannerAppE
                 dialogBTAddress.setCanceledOnTouchOutside(false);
                 dialogBTAddress.show();
                 Window window = dialogBTAddress.getWindow();
-                if(window!=null) window.setLayout(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+                if (window != null)
+                    window.setLayout(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
                 bluetoothMAC = settings.getString(Constants.PREF_BT_ADDRESS, "");
             } else {
                 dialogBTAddress.show();

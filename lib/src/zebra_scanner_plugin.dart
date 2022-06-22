@@ -3,10 +3,11 @@ import 'dart:convert';
 
 import 'package:flutter/services.dart';
 
+import 'barcode.dart';
+
 class ZebraScannerPlugin {
   static const MethodChannel _channel = MethodChannel('zebra_scanner_plugin');
   static const EventChannel _eventChannel = EventChannel('barcode_stream');
-
 
   static Future<String?> get platformVersion async {
     final String? version = await _channel.invokeMethod("getPlatformVersion");
@@ -18,20 +19,18 @@ class ZebraScannerPlugin {
   }
 
   static Future<String?> connectToScanner(String bluetoothAddress) async {
-    final String? connectToScanner = await _channel
-        .invokeMethod("connectToScanner", {"bluetoothAddress": bluetoothAddress});
+    final String? connectToScanner = await _channel.invokeMethod(
+        "connectToScanner", {"bluetoothAddress": bluetoothAddress});
     return connectToScanner;
   }
 
   static Future<String?> connect() async {
-    final String? connectToScanner = await _channel
-        .invokeMethod("connect");
+    final String? connectToScanner = await _channel.invokeMethod("connect");
     return connectToScanner;
   }
 
   static Future<String?> disconnect() async {
-    final String? connectToScanner = await _channel
-        .invokeMethod("disconnect");
+    final String? connectToScanner = await _channel.invokeMethod("disconnect");
     return connectToScanner;
   }
 
@@ -43,14 +42,4 @@ class ZebraScannerPlugin {
       return barcode;
     });
   }
-
-
-}
-
-
-class Barcode {
-  String data;
-  String type;
-
-  Barcode(this.data, this.type);
 }
