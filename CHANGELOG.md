@@ -43,3 +43,8 @@
 ## 1.1.2
 
 ## Removed "," from the scanned barcode type
+
+## 1.1.3
+
+## Formatted the project with flutter format . command
+## Added api documentation for the ZebraScannerPlugin dart class
