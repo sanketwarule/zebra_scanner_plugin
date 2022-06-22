@@ -2,5 +2,5 @@ class Barcode {
   String data;
   String type;
 
-  Barcode({this.data, this.type});
+  Barcode({required this.data, required this.type});
 }
