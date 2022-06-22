@@ -15,7 +15,7 @@ samples, guidance on mobile development, and a full API reference.
 
 ## Output
 
-<img src="https://github.com/sanketwarule/zebra_scanner_plugin/blob/master/zebra_scanner_plugin_example_output.gif" width="420" height="920" />
+<img src="https://github.com/sanketwarule/zebra_scanner_plugin/blob/master/zebra_scanner_plugin_example_output.gif"/>
 
 ## How to use
 
