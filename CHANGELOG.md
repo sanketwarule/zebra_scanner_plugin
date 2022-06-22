@@ -10,7 +10,6 @@
 
 ## Integrated zebra sdk for android and added barcode stream
 
-
 ## 0.0.4
 
 ## Resolved issue unable to find barcode scanner library
@@ -26,9 +25,13 @@
 ## 1.0.0
 
 ## changed the connection approach
+
 ## fixed the bugs, tested and works perfect
+
 ## added "how to use" section in readme.md file
 
 ## 1.1.0
+
 ## Upgrade gradle version
+
 ## Added gif output of example app

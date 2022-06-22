@@ -22,7 +22,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:text="@string/get_bt_address_instruction1"
-                android:paddingBottom="0dp"/>
+                android:paddingBottom="0dp" />
 
             <TextView
                 android:id="@+id/txt_navigate_bt_address"
@@ -30,6 +30,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/get_bt_address_instruction_item_1" />
+
             <TextView
                 android:id="@+id/abt_phone"
                 style="@style/roboto_regular_15dp_blue"
@@ -45,12 +46,14 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="15dp"
                 android:text="@string/get_bt_address_instruction_item_2" />
+
             <TextView
                 style="@style/roboto_regular_15dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="15dp"
                 android:text="@string/get_bt_address_instruction_item_3" />
+
             <TextView
                 style="@style/roboto_regular_15dp"
                 android:layout_width="wrap_content"
@@ -69,9 +72,10 @@
                 android:paddingRight="10dp"
                 android:visibility="visible"
                 android:background="@drawable/border"
-                android:hint="Bluetooth Address"/>
+                android:hint="Bluetooth Address" />
 
             <include layout="@layout/full_divider" />
+
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
