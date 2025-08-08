@@ -56,3 +56,67 @@ required because the **barcode_scanner_library.aar** library defines
 an `android:label="@string/app_name"` which conflicts with your project's label resulting in a *
 Manifest merger failed* error
 
+---
+
+## Quickstart (Android)
+```dart
+import 'dart:async';
+import 'package:flutter/material.dart';
+import 'package:zebra_scanner_plugin/zebra_scanner_plugin.dart';
+
+class App extends StatefulWidget {
+  const App({Key? key}) : super(key: key);
+  @override
+  State<App> createState() => _AppState();
+}
+
+class _AppState extends State<App> {
+  final List<Barcode> _scans = [];
+  StreamSubscription<Barcode>? _sub;
+
+  @override
+  void initState() {
+    super.initState();
+    _setup();
+  }
+
+  Future<void> _setup() async {
+    await ZebraScannerPlugin.initScanner;
+    _sub = ZebraScannerPlugin.barcodeStream.listen((b) => setState(() => _scans.add(b)));
+  }
+
+  @override
+  void dispose() {
+    _sub?.cancel();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('Zebra Scanner Plugin example app'), actions: [
+        IconButton(icon: const Icon(Icons.bluetooth_searching), onPressed: () async {
+          await ZebraScannerPlugin.connect();
+        }),
+      ]),
+      body: ListView.builder(
+        itemCount: _scans.length,
+        itemBuilder: (context, i) => ListTile(
+          leading: const Icon(Icons.qr_code),
+          title: Text(_scans[i].data),
+          trailing: Text(_scans[i].type),
+        ),
+      ),
+    );
+  }
+}
+```
+
+## Documentation
+- API reference: `docs/API.md`
+- Known issues and resolutions: `docs/KNOWN_ISSUES.md`
+
+## Platform support
+- Android: Full scanner support
+- iOS: Platform version only (no scanner support yet)
+
